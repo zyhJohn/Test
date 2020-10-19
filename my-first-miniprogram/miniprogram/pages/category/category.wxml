@@ -1,0 +1,29 @@
+<!--pages/category/category.wxml-->
+<!-- <text>pages/category/category.wxml</text> -->
+<view>
+
+  <!-- 上方搜索框 -->
+  <view class="search-container">
+    <view class="search-items">
+      <icon type="search" class="search-category"></icon>
+      <input type="text" placeholder="{{ search.keyword }}"/>
+    </view>
+  </view>
+
+  <!-- 左侧标题区 -->
+  <scroll-view class="scroll-title" scroll-y="true">
+    <!-- class="{{isSelected?selected:not-selected}}"三元运算符控制是否选中的样式 -->
+    <!-- 选中的按钮触发请求url，返回数据渲染在右侧内容区 -->
+    <button class="title-container" wx:for="{{ categoryList }}" wx:key="index">{{ item.title }}</button>
+  </scroll-view>
+
+  <!-- 右侧内容区 -->
+  <scroll-view class="scroll-content" scroll-y="true">
+    <image src="../../images/swiper-image1.jpg" class="content-image"></image>
+    <image src="../../images/swiper-image2.jpg" class="content-image"></image>
+    <image src="../../images/swiper-image3.jpg" class="content-image"></image>
+    <image src="../../images/swiper-image1.jpg" class="content-image"></image>
+    <image src="../../images/swiper-image2.jpg" class="content-image"></image>
+  </scroll-view>
+
+</view>
